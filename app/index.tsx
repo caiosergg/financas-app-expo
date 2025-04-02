@@ -1,8 +1,10 @@
+import Header from "@/components/Header";
 import { View, Text, StyleSheet } from "react-native";
 
 export default function Home() {
   return (
     <View style={styles.container}>
+      <Header name="Caio Sérgio" />
       <Text>HOME</Text>
     </View>
   );
