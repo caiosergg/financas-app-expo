@@ -1,4 +1,6 @@
 import React from "react";
+import { Platform } from "react-native";
+
 import { Feather } from "@expo/vector-icons";
 
 import {
@@ -33,7 +35,7 @@ export default function Header({ name }: HeaderProps) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#8000ff",
+    backgroundColor: "#009688",
     paddingTop: statusBarHeight,
     flexDirection: "row",
     paddingStart: 16,
@@ -47,14 +49,15 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   userName: {
-    fontSize: 18,
-    color: "#fff",
+    fontSize: 22,
+    color: "#000",
     fontWeight: "bold",
+    fontFamily: Platform.OS === "ios" ? "Helvetica" : "sans-serif-medium",
   },
   buttonUser: {
     width: 44,
     height: 44,
-    backgroundColor: "rgba(255, 255, 255, 0.5)",
+    backgroundColor: "rgba(0, 0, 0, 0.85)",
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 44 / 2,
