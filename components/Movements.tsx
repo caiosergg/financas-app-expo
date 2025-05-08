@@ -23,7 +23,7 @@ export default function Movements({ data }: MovementsProps) {
         {data.label}
       </Text>
       <Text style={styles.label}>{data.label}</Text>
-      <Text style={styles.label}>{data.value}</Text>
+      <Text style={styles.value}>{data.value}</Text>
       <Text style={styles.date}>{data.date}</Text>
     </TouchableOpacity>
   );
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     padding: 10,
     backgroundColor: "#000",
     borderBottomWidth: 1,
-    borderBottomColor: "#fff",
+    borderBottomColor: "#ccc",
   },
   label: {
     fontSize: 16,
@@ -42,7 +42,8 @@ const styles = StyleSheet.create({
     color: "#fff",
   },
   value: {
-    fontSize: 14,
+    color: "#fff",
+    fontSize: 16,
     fontWeight: "bold",
   },
   date: {

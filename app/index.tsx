@@ -4,6 +4,7 @@ import { View, Text, StyleSheet, FlatList } from "react-native";
 import Header from "@/components/Header";
 import Balance from "@/components/Balance";
 import Movements from "@/components/Movements";
+import Actions from "@/components/Actions";
 
 interface ListProps {
   id: number;
@@ -45,7 +46,9 @@ export default function Home() {
 
       <Balance saldo="15.537,90" gastos="357,48" />
 
-      <Text style={styles.title}>Últimas transações</Text>
+      <Actions />
+
+      <Text style={styles.title}>Últimas movimentações</Text>
 
       <FlatList
         style={styles.list}
@@ -71,8 +74,6 @@ const styles = StyleSheet.create({
     marginEnd: 16,
     marginBottom: 14,
     fontWeight: "bold",
-    borderBottomWidth: 1,
-    borderBottomColor: "#fff",
     paddingBottom: 10,
     paddingTop: 10,
     textAlign: "left",
