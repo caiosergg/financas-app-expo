@@ -1,5 +1,6 @@
 import React from "react";
 import { TouchableOpacity, Text, StyleSheet, FlatList } from "react-native";
+import { MotiView, MotiText, AnimatePresence } from "moti";
 
 interface MovementsProps {
   data: {
@@ -22,7 +23,6 @@ export default function Movements({ data }: MovementsProps) {
       >
         {data.label}
       </Text>
-      <Text style={styles.label}>{data.label}</Text>
       <Text style={styles.value}>{data.value}</Text>
       <Text style={styles.date}>{data.date}</Text>
     </TouchableOpacity>

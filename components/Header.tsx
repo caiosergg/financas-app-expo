@@ -1,6 +1,7 @@
 import React from "react";
 import { Platform } from "react-native";
 
+import { MotiView, MotiText } from "moti";
 import { Feather } from "@expo/vector-icons";
 
 import {
@@ -14,7 +15,6 @@ import {
 interface HeaderProps {
   name: string;
 }
-
 // evita que o conteúdo do cabeçalho seja sobreposto pela barra de status do dispositivo
 const statusBarHeight = StatusBar.currentHeight
   ? StatusBar.currentHeight + 22
@@ -23,12 +23,42 @@ const statusBarHeight = StatusBar.currentHeight
 export default function Header({ name }: HeaderProps) {
   return (
     <View style={styles.container}>
-      <View style={styles.content}>
-        <Text style={styles.userName}>{name}</Text>
+      <MotiView
+        style={styles.content}
+        from={{
+          opacity: 0,
+          translateY: -150,
+        }}
+        animate={{
+          opacity: 1,
+          translateY: 0,
+        }}
+        transition={{
+          type: "timing",
+          duration: 800,
+          delay: 300,
+        }}
+      >
+        <MotiText
+          style={styles.userName}
+          from={{
+            translateX: -300,
+          }}
+          animate={{
+            translateX: 0,
+          }}
+          transition={{
+            type: "timing",
+            duration: 800,
+            delay: 800,
+          }}
+        >
+          {name}
+        </MotiText>
         <TouchableOpacity activeOpacity={0.9} style={styles.buttonUser}>
           <Feather name="user" size={27} color="#fff" />
         </TouchableOpacity>
-      </View>
+      </MotiView>
     </View>
   );
 }

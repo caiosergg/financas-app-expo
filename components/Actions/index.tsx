@@ -56,22 +56,28 @@ export default function Actions() {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "#000",
-    maxHeight: 80,
+    maxHeight: "100%",
+    height: 150,
+    paddingBottom: 20,
     marginTop: 20,
-    marginBottom: 10,
+    marginBottom: 20,
     paddingStart: 20,
     paddingEnd: 20,
   },
   actionButton: {
+    paddingTop: 10,
     marginRight: 32,
+    marginTop: 14,
     alignItems: "center",
     backgroundColor: "#000",
+    justifyContent: "center",
+    padding: 5,
   },
   labelButton: {
     backgroundColor: "#000",
+    marginTop: 5,
     color: "#fff",
     textAlign: "center",
-    marginTop: 5,
     fontWeight: "bold",
   },
   areaButton: {

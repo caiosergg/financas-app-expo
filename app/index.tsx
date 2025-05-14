@@ -37,6 +37,41 @@ const list: ListProps[] = [
     date: "17/08/2025",
     type: 1, //receitas
   },
+  {
+    id: 4,
+    label: "Pagamento de salário",
+    value: "R$ 1.500,00",
+    date: "01/09/2025",
+    type: 1, //receitas
+  },
+  {
+    id: 5,
+    label: "Compra na loja",
+    value: "R$ 50,00",
+    date: "30/04/2025",
+    type: 0, //despesas
+  },
+  {
+    id: 6,
+    label: "Pagamento de conta",
+    value: "R$ 100,00",
+    date: "22/06/2025",
+    type: 0, //despesas
+  },
+  {
+    id: 7,
+    label: "Transferência recebida",
+    value: "R$ 200,00",
+    date: "17/08/2025",
+    type: 1, //receitas
+  },
+  {
+    id: 8,
+    label: "Pagamento de salário",
+    value: "R$ 1.500,00",
+    date: "01/09/2025",
+    type: 1, //receitas
+  },
 ];
 
 export default function Home() {
@@ -44,7 +79,7 @@ export default function Home() {
     <View style={styles.container}>
       <Header name="Olá, Caio" />
 
-      <Balance saldo="15.537,90" gastos="357,48" />
+      <Balance saldo="5.537,90" gastos="357,48" />
 
       <Actions />
 
@@ -68,14 +103,10 @@ const styles = StyleSheet.create({
   },
   title: {
     color: "#fff",
-    fontSize: 20,
-    marginTop: 20,
+    fontSize: 19,
     marginStart: 16,
-    marginEnd: 16,
-    marginBottom: 14,
+    paddingBottom: 14,
     fontWeight: "bold",
-    paddingBottom: 10,
-    paddingTop: 10,
     textAlign: "left",
   },
   list: {
