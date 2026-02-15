@@ -57,11 +57,12 @@ export default function Actions() {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "#000",
-    height: 10,
-    paddingBottom: 20,
     marginVertical: 20,
     paddingHorizontal: 20,
+    paddingBottom: 10,
+    paddingTop: 10,
   },
+
   actionButton: {
     paddingTop: 10,
     marginRight: 32,

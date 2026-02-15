@@ -30,6 +30,34 @@ const list: MovementItem[] = [
     date: "17/08/2025",
     type: 1,
   },
+  {
+    id: 4,
+    label: "Assinatura de streaming",
+    value: "R$ 39,90",
+    date: "05/09/2025",
+    type: 0,
+  },
+  {
+    id: 5,
+    label: "Depósito em conta",
+    value: "R$ 500,00",
+    date: "12/10/2025",
+    type: 1,
+  },
+  {
+    id: 6,
+    label: "Pagamento de boleto",
+    value: "R$ 250,75",
+    date: "03/11/2025",
+    type: 0,
+  },
+  {
+    id: 7,
+    label: "Pagamento de boleto",
+    value: "R$ 250,75",
+    date: "03/11/2025",
+    type: 0,
+  },
 ];
 
 export default function Home() {
