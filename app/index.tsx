@@ -1,76 +1,34 @@
 import React from "react";
 import { View, Text, StyleSheet, FlatList } from "react-native";
 
-import Header from "@/components/Header";
-import Balance from "@/components/Balance";
-import Movements from "@/components/Movements";
-import Actions from "@/components/Actions";
+import Header from "@/components/finance/Header";
+import Balance from "@/components/finance/Balance";
+import Movements from "@/components/finance/Movements";
+import Actions from "@/components/finance/Actions";
 
-interface ListProps {
-  id: number;
-  label: string;
-  value: string;
-  date: string;
-  type: number;
-}
-// 0 = despesas, 1 = receitas
+import { MovementItem } from "@/types/movement";
 
-const list: ListProps[] = [
+const list: MovementItem[] = [
   {
     id: 1,
     label: "Compra na loja",
     value: "R$ 50,00",
     date: "30/04/2025",
-    type: 0, //despesas
+    type: 0,
   },
   {
     id: 2,
     label: "Pagamento de conta",
     value: "R$ 100,00",
     date: "22/06/2025",
-    type: 0, //despesas
+    type: 0,
   },
   {
     id: 3,
     label: "Transferência recebida",
     value: "R$ 200,00",
     date: "17/08/2025",
-    type: 1, //receitas
-  },
-  {
-    id: 4,
-    label: "Pagamento de salário",
-    value: "R$ 1.500,00",
-    date: "01/09/2025",
-    type: 1, //receitas
-  },
-  {
-    id: 5,
-    label: "Compra na loja",
-    value: "R$ 50,00",
-    date: "30/04/2025",
-    type: 0, //despesas
-  },
-  {
-    id: 6,
-    label: "Pagamento de conta",
-    value: "R$ 100,00",
-    date: "22/06/2025",
-    type: 0, //despesas
-  },
-  {
-    id: 7,
-    label: "Transferência recebida",
-    value: "R$ 200,00",
-    date: "17/08/2025",
-    type: 1, //receitas
-  },
-  {
-    id: 8,
-    label: "Pagamento de salário",
-    value: "R$ 1.500,00",
-    date: "01/09/2025",
-    type: 1, //receitas
+    type: 1,
   },
 ];
 
@@ -86,11 +44,11 @@ export default function Home() {
       <Text style={styles.title}>Últimas movimentações</Text>
 
       <FlatList
-        style={styles.list}
         data={list}
-        keyExtractor={(item) => String(item.id)}
-        showsHorizontalScrollIndicator={false}
+        keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => <Movements data={item} />}
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={styles.list}
       />
     </View>
   );
@@ -104,13 +62,11 @@ const styles = StyleSheet.create({
   title: {
     color: "#fff",
     fontSize: 19,
-    marginStart: 16,
+    marginLeft: 16,
     paddingBottom: 14,
     fontWeight: "bold",
-    textAlign: "left",
   },
   list: {
-    marginStart: 14,
-    marginEnd: 14,
+    paddingHorizontal: 14,
   },
 });

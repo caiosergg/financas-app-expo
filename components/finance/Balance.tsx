@@ -1,5 +1,4 @@
 import React from "react";
-
 import { View, Text, StyleSheet } from "react-native";
 import { MotiView } from "moti";
 
@@ -50,16 +49,13 @@ const styles = StyleSheet.create({
     backgroundColor: "#000",
     flexDirection: "row",
     justifyContent: "space-between",
-    paddingStart: 18,
-    paddingEnd: 18,
+    paddingHorizontal: 18,
     marginTop: -24,
-    marginStart: 14,
-    marginEnd: 14,
+    marginHorizontal: 14,
     borderRadius: 4,
     borderWidth: 3,
     borderColor: "#009688",
-    paddingTop: 22,
-    paddingBottom: 22,
+    paddingVertical: 22,
     zIndex: 99,
   },
   itemTitle: {
@@ -83,6 +79,6 @@ const styles = StyleSheet.create({
     color: "#ff0000",
   },
   item: {
-    flex: 0,
+    flex: 1,
   },
 });

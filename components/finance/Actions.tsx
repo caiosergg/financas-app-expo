@@ -1,3 +1,4 @@
+import React from "react";
 import {
   View,
   Text,
@@ -12,7 +13,7 @@ export default function Actions() {
   return (
     <ScrollView
       style={styles.container}
-      horizontal={true}
+      horizontal
       showsHorizontalScrollIndicator={false}
     >
       <TouchableOpacity style={styles.actionButton}>
@@ -56,25 +57,20 @@ export default function Actions() {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "#000",
-    maxHeight: "100%",
-    height: 150,
+    height: 10,
     paddingBottom: 20,
-    marginTop: 20,
-    marginBottom: 20,
-    paddingStart: 20,
-    paddingEnd: 20,
+    marginVertical: 20,
+    paddingHorizontal: 20,
   },
   actionButton: {
     paddingTop: 10,
     marginRight: 32,
     marginTop: 14,
     alignItems: "center",
-    backgroundColor: "#000",
     justifyContent: "center",
     padding: 5,
   },
   labelButton: {
-    backgroundColor: "#000",
     marginTop: 5,
     color: "#fff",
     textAlign: "center",

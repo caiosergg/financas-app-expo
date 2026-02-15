@@ -1,21 +1,22 @@
 import React from "react";
-import { Platform } from "react-native";
-
-import { MotiView, MotiText } from "moti";
-import { Feather } from "@expo/vector-icons";
-
 import {
+  Platform,
   View,
   StyleSheet,
-  Text,
   StatusBar,
   TouchableOpacity,
 } from "react-native";
+import { MotiView, MotiText } from "moti";
+import { Feather } from "@expo/vector-icons";
+
+const colors = {
+  primary: "#009688",
+};
 
 interface HeaderProps {
   name: string;
 }
-// evita que o conteúdo do cabeçalho seja sobreposto pela barra de status do dispositivo
+
 const statusBarHeight = StatusBar.currentHeight
   ? StatusBar.currentHeight + 22
   : 64;
@@ -25,36 +26,19 @@ export default function Header({ name }: HeaderProps) {
     <View style={styles.container}>
       <MotiView
         style={styles.content}
-        from={{
-          opacity: 0,
-          translateY: -150,
-        }}
-        animate={{
-          opacity: 1,
-          translateY: 0,
-        }}
-        transition={{
-          type: "timing",
-          duration: 800,
-          delay: 300,
-        }}
+        from={{ opacity: 0, translateY: -150 }}
+        animate={{ opacity: 1, translateY: 0 }}
+        transition={{ type: "timing", duration: 800, delay: 300 }}
       >
         <MotiText
           style={styles.userName}
-          from={{
-            translateX: -300,
-          }}
-          animate={{
-            translateX: 0,
-          }}
-          transition={{
-            type: "timing",
-            duration: 800,
-            delay: 800,
-          }}
+          from={{ translateX: -300 }}
+          animate={{ translateX: 0 }}
+          transition={{ type: "timing", duration: 800, delay: 800 }}
         >
           {name}
         </MotiText>
+
         <TouchableOpacity activeOpacity={0.9} style={styles.buttonUser}>
           <Feather name="user" size={27} color="#fff" />
         </TouchableOpacity>
@@ -65,11 +49,10 @@ export default function Header({ name }: HeaderProps) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#009688",
+    backgroundColor: colors.primary,
     paddingTop: statusBarHeight,
     flexDirection: "row",
-    paddingStart: 16,
-    paddingEnd: 16,
+    paddingHorizontal: 16,
     paddingBottom: 44,
   },
   content: {
@@ -92,6 +75,6 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(0, 0, 0, 0.85)",
     justifyContent: "center",
     alignItems: "center",
-    borderRadius: 44 / 2,
+    borderRadius: 22,
   },
 });
